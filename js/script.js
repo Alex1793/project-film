@@ -2,17 +2,17 @@
 
 
 const personalMovieDB  = {
-    count: howManyFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
     privat: false,
 
     start: function () {
-        let howManyFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
     
-        while(howManyFilms == '' || howManyFilms == null || isNaN(howManyFilms)) {
-            howManyFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        while(personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
         }
     },
 
@@ -69,3 +69,6 @@ const personalMovieDB  = {
     }
 };
 
+// personalMovieDB.start();
+// personalMovieDB.detectPersonalLevel();
+// personalMovieDB.writeYourGenres(personalMovieDB.genres);
